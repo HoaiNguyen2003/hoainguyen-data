@@ -1,12 +1,12 @@
-/* CV / Portfolio — progressive enhancement only; page content is fully readable without JS. */
+/* CV / Portfolio - progressive enhancement only; page content is fully readable without JS. */
 (() => {
   'use strict';
 
   const root = document.documentElement;
   const LANGS = ['vi', 'en'];
   const TITLES = {
-    vi: 'Nguyễn Thanh Hoài — Data Engineer | CV',
-    en: 'Nguyen Thanh Hoai — Data Engineer | CV',
+    vi: 'Nguyễn Thanh Hoài | Data Engineer',
+    en: 'Nguyen Thanh Hoai | Data Engineer',
   };
 
   /* ---------- Language toggle ---------- */

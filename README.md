@@ -1,7 +1,7 @@
-# Nguyễn Thanh Hoài — CV / Portfolio
+# Nguyễn Thanh Hoài - CV / Portfolio
 
-Trang CV online (song ngữ VI/EN) của Nguyễn Thanh Hoài — Data Engineer.
-Live: https://hoainguyen2003.github.io/hoainguyen-data/ · Bản tiếng Anh: thêm `?lang=en`
+Trang CV online (song ngữ VI/EN) của Nguyễn Thanh Hoài - Data Engineer.
+Live: https://hoainguyen2003.github.io/hoainguyen-data/ | Bản tiếng Anh: thêm `?lang=en`
 
 ## Cấu trúc
 
@@ -13,7 +13,7 @@ Live: https://hoainguyen2003.github.io/hoainguyen-data/ · Bản tiếng Anh: th
 | `assets/img/` | Ảnh đã tối ưu (WebP), `thumbs/` cho gallery |
 | `assets/files/` | CV PDF để tải về |
 
-Không có bước build — sửa file là xong, push lên là web tự cập nhật.
+Không có bước build: sửa file xong, push lên là web tự cập nhật.
 
 ## Quy trình cập nhật (4 bước)
 
@@ -25,7 +25,7 @@ Mở PowerShell / Terminal trong VS Code tại thư mục dự án (`D:\Project 
 python -m http.server 8000      # rồi mở http://127.0.0.1:8000  (Ctrl+C để tắt)
 ```
 
-Sửa file → lưu → F5 trình duyệt để xem. Nhớ thử cả nút **EN**.
+Sửa file, lưu lại rồi nhấn F5 trên trình duyệt để xem. Nhớ thử cả nút **EN**.
 
 ### 2. Kiểm tra những gì đã thay đổi
 
@@ -51,7 +51,7 @@ Viết message ngắn mô tả đã sửa gì.
 git push
 ```
 
-Đợi ~1 phút → mở link Live, nhấn **Ctrl+F5** (tải lại không dùng cache). Tiến trình deploy xem ở tab **Actions** của repo.
+Đợi khoảng 1 phút rồi mở link Live, nhấn **Ctrl+F5** (tải lại không dùng cache). Tiến trình deploy xem ở tab **Actions** của repo.
 
 ## Các việc hay gặp
 
@@ -70,16 +70,16 @@ git push
 
 | Tình huống | Cách xử lý |
 |---|---|
-| Lỡ sửa hỏng, **chưa commit** | `git restore index.html` (bỏ thay đổi của file đó) — hoặc `git restore .` cho tất cả |
+| Lỡ sửa hỏng, **chưa commit** | `git restore index.html` (bỏ thay đổi của file đó), hoặc `git restore .` cho tất cả |
 | Đã commit nhưng **chưa push**, muốn sửa lại message/nội dung | Sửa tiếp rồi `git add -A; git commit --amend -m "message mới"` |
 | Đã push bản lỗi | `git revert HEAD` rồi `git push` (tạo commit đảo ngược, web quay về bản trước) |
 | `git push` bị từ chối (rejected) | Có thay đổi trên GitHub chưa có ở máy: `git pull --rebase` rồi `git push` |
 | Push đòi đăng nhập | Đăng nhập GitHub trong cửa sổ hiện ra (Git Credential Manager) |
-| Web chưa đổi sau khi push | Đợi 1–2 phút, Ctrl+F5; xem tab **Actions** có lỗi không |
-| Lỡ push file riêng tư | Báo ngay — cần xoá khỏi lịch sử git (xoá file thôi là chưa đủ) |
+| Web chưa đổi sau khi push | Đợi 1-2 phút, Ctrl+F5; xem tab **Actions** có lỗi không |
+| Lỡ push file riêng tư | Báo ngay, vì phải xoá khỏi lịch sử git (xoá file thôi là chưa đủ) |
 
 ## Deploy
 
-GitHub Pages: repo `HoaiNguyen2003/hoainguyen-data`, Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`. Mỗi lần `git push` lên `main` là web tự cập nhật.
+GitHub Pages: repo `HoaiNguyen2003/hoainguyen-data`, Settings > Pages > *Deploy from a branch* > `main` / `/ (root)`. Mỗi lần `git push` lên `main` là web tự cập nhật.
 
-> Dữ liệu cá nhân gốc (ngày sinh, ảnh scan bằng gốc, ghi chú) và thư mục `scripts/`, `plans/` được loại khỏi repo bằng `.gitignore` — chúng **chỉ có trên máy này**, nên sao lưu riêng nếu đổi máy.
+> Dữ liệu cá nhân gốc (ngày sinh, ảnh scan bằng gốc, ghi chú) và thư mục `scripts/`, `plans/` được loại khỏi repo bằng `.gitignore`. Chúng **chỉ có trên máy này**, nên sao lưu riêng nếu đổi máy.

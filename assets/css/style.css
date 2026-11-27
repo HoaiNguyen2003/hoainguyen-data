@@ -1,10 +1,10 @@
-﻿/* =========================================================
-   CV / Portfolio — Nguyễn Thanh Hoài
+/* =========================================================
+   CV / Portfolio - Nguyễn Thanh Hoài
    Plain CSS, no build step. Sections:
-   1 tokens · 2 base · 3 i18n · 4 topbar · 5 hero · 6 layout
-   7 cards/sidebar · 8 sections · 9 timeline · 10 projects
-   11 awards · 12 gallery · 13 lightbox · 14 footer
-   15 responsive · 16 motion · 17 print
+   1 tokens, 2 base, 3 i18n, 4 topbar, 5 hero, 6 layout
+   7 cards/sidebar, 8 sections, 9 timeline, 10 projects
+   11 awards, 12 gallery, 13 lightbox, 14 footer
+   15 responsive, 16 motion, 17 print
    ========================================================= */
 
 /* 1. Tokens */
@@ -58,7 +58,7 @@ svg { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; s
 }
 .skip-link:focus { top: 12px; color: #fff; }
 
-/* 3. i18n — show only the active language */
+/* 3. i18n - show only the active language */
 html[data-lang="vi"] [lang="en"],
 html[data-lang="en"] [lang="vi"] { display: none !important; }
 
@@ -286,7 +286,7 @@ html[data-lang="en"] [lang="vi"] { display: none !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-/* 17. Print — A4, compact, ink-friendly */
+/* 17. Print - A4, compact, ink-friendly */
 @media print {
   @page { size: A4; margin: 12mm; }
   :root { --space: 10px; --shadow: none; }
