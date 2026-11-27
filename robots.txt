@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://hoainguyen2003.github.io/sitemap.xml

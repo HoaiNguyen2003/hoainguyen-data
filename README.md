@@ -1,7 +1,7 @@
 # Nguyễn Thanh Hoài — CV / Portfolio
 
 Trang CV online (song ngữ VI/EN) của Nguyễn Thanh Hoài — Data Engineer.
-Live: https://hoainguyen2003.github.io
+Live: https://hoainguyen2003.github.io/hoainguyen-data/
 
 ## Cấu trúc
 
@@ -23,6 +23,6 @@ Không có bước build. Mở `index.html` trực tiếp hoặc chạy `python 
 
 ## Deploy
 
-GitHub Pages: repo `HoaiNguyen2003.github.io`, Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`.
+GitHub Pages: repo `HoaiNguyen2003/hoainguyen-data` (project site, URL có hậu tố `/hoainguyen-data/`), Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`.
 
 > Dữ liệu cá nhân gốc (ngày sinh, ảnh scan bằng gốc, ghi chú) được loại khỏi repo bằng `.gitignore`.
