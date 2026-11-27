@@ -159,7 +159,6 @@ html[data-lang="en"] [lang="vi"] { display: none !important; }
 .contact-list li { display: grid; gap: 0; padding: 6px 0; border-bottom: 1px dashed var(--c-border); font-size: .93rem; overflow-wrap: anywhere; }
 .contact-list li:last-child { border-bottom: 0; }
 .contact-list__label { font-size: .75rem; font-weight: 600; color: var(--c-muted); text-transform: uppercase; letter-spacing: .05em; }
-.note { margin: 12px 0 0; font-size: .85rem; color: var(--c-muted); }
 .skill-group + .skill-group { margin-top: 14px; }
 .skill-group h3 { font-size: .85rem; color: var(--c-muted); font-weight: 600; margin-bottom: 8px; }
 .chips, .tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -293,7 +292,7 @@ html[data-lang="en"] [lang="vi"] { display: none !important; }
   :root { --space: 10px; --shadow: none; }
   html { font-size: 11px; }
   body { background: #fff; font-size: 10.5px; line-height: 1.45; color: #000; }
-  .topbar, .skip-link, .hero__actions, .hero__cover, #gallery, .lightbox, .note, .project__link,
+  .topbar, .skip-link, .hero__actions, .hero__cover, #gallery, .lightbox, .project__link,
   .competencies, .sidebar .card:last-child, .tags, .project__kind, .hero__tagline { display: none !important; }
   h2, h3, h4 { break-after: avoid; }
   .contact-list li { font-size: 10px; }
