@@ -97,7 +97,7 @@
           <p class="hero__title">Data Engineer</p>
           <p class="hero__tagline">
             <span lang="vi">Dự án thực hiện tạo pipeline dữ liệu bằng Python và SQL: thu thập, làm sạch, đưa vào kho dữ liệu rồi dựng dashboard báo cáo, kết hợp mảng AI, chatbot hỏi đáp từ nguồn data đã phát triển cũng như từ tài liệu dùng RAG với Llama-Index, Ollama và Qdrant.</span>
-            <span lang="en">This project builds an end-to-end data pipeline using Python and SQL—collecting, cleaning, and loading data into a warehouse for reporting dashboards—integrated with an AI Q&A chatbot powered by RAG (LlamaIndex, Ollama, and Qdrant) to query both the processed data and documents.</span>
+            <span lang="en">This project builds an end-to-end data pipeline using Python and SQL: collecting, cleaning, and loading data into a warehouse for reporting dashboards, integrated with an AI Q&amp;A chatbot powered by RAG (Llama-Index, Ollama, and Qdrant) to query both the processed data and documents.</span>
           </p>
           <ul class="hero__meta">
             <li>
@@ -147,8 +147,8 @@
         <section class="section" id="about" aria-labelledby="about-h">
           <h2 class="section__title" id="about-h"><span lang="vi">Giới thiệu</span><span lang="en">About me</span></h2>
           <p class="lead">
-            <span lang="vi">Tôi tốt nghiệp Kỹ sư Khoa học Dữ liệu loại <strong>Giỏi</strong> tại IUH và đang học <strong>Thạc sĩ Khoa học Máy tính</strong>. Khoảng 2 năm qua tôi làm backend Python và dữ liệu cho hệ thống ERP doanh nghiệp: thiết kế database, viết script ETL, tối ưu các truy vấn báo cáo chạy chậm. Ngoài giờ làm, tôi tự làm thêm các dự án pipeline dữ liệu với Airflow, Dagster, DuckDB và thử nghiệm RAG với Qdrant.</span>
-            <span lang="en">I graduated from IUH with an Engineer's degree in Data Science (<strong>Very Good</strong>) and I'm now studying for a <strong>Master's in Computer Science</strong>. For about two years I worked on Python backends and data for enterprise ERP systems: designing databases, writing ETL scripts and speeding up slow report queries. In my own time I build data pipeline projects with Airflow, Dagster and DuckDB, and experiment with RAG on Qdrant.</span>
+            <span lang="vi">Tôi tốt nghiệp Kỹ sư Khoa học Dữ liệu loại <strong>Giỏi</strong> tại IUH và đang học <strong>Thạc sĩ Khoa học Máy tính</strong>. Khoảng 2 năm qua tôi làm backend Python và dữ liệu cho hệ thống ERP doanh nghiệp: thiết kế database, viết script ETL, tối ưu các truy vấn báo cáo chạy chậm. Ngoài giờ làm, tôi tự làm các dự án dữ liệu end-to-end: pipeline CDC thời gian thực với Debezium, Redpanda, BigQuery và dbt, pipeline với Dagster và DuckDB, cùng chatbot RAG trên Qdrant.</span>
+            <span lang="en">I graduated from IUH with an Engineer's degree in Data Science (<strong>Very Good</strong>) and I'm now studying for a <strong>Master's in Computer Science</strong>. For about two years I worked on Python backends and data for enterprise ERP systems: designing databases, writing ETL scripts and speeding up slow report queries. In my own time I build end-to-end data projects: a real-time CDC pipeline with Debezium, Redpanda, BigQuery and dbt, a pipeline with Dagster and DuckDB, and a RAG chatbot on Qdrant.</span>
           </p>
           <ul class="competencies">
             <li class="competency">
@@ -220,6 +220,22 @@
           <div class="projects">
             <article class="project">
               <header>
+                <p class="project__meta"><span lang="vi">Dự án cá nhân</span><span lang="en">Personal project</span>, 08/2026</p>
+                <h3>Real-Time Real Estate Data Pipeline &amp; AI/BI Analytics Platform</h3>
+                <p class="project__kind">Data Engineering, CDC Streaming &amp; Analytics</p>
+              </header>
+              <ul class="bullets">
+                <li><span lang="vi">Thu thập 43.414 tin đăng bất động sản (khoảng 106 MB JSON) từ batdongsan.com.vn bằng crawler Playwright bất đồng bộ, có giới hạn tốc độ và checkpoint. Dữ liệu được upsert theo lô (idempotent) vào PostgreSQL (JSONB), bản gốc lưu trên MinIO để chạy lại và đối soát.</span><span lang="en">Scraped 43,414 real estate listings (about 106 MB of JSON) from batdongsan.com.vn with an async Playwright crawler using rate limiting and checkpoints. Loaded them into PostgreSQL (JSONB) with idempotent batch upserts and kept raw snapshots in MinIO for replay and audit.</span></li>
+                <li><span lang="vi">Dựng CDC từ log: Debezium đọc WAL của PostgreSQL và đẩy thay đổi sang Redpanda. Consumer Python nạp từng lô 5.000 bản ghi lên BigQuery và commit offset thủ công, chỉ sau khi nạp thành công (at-least-once).</span><span lang="en">Set up log-based CDC: Debezium reads the PostgreSQL WAL and streams changes to Redpanda. A Python consumer loads batches of 5,000 records into BigQuery and commits Kafka offsets manually, only after each load succeeds (at-least-once).</span></li>
+                <li><span lang="vi">Xây kho dữ liệu Bronze, Silver, Gold trên BigQuery bằng dbt Core. Mỗi lần chạy toàn bộ mất khoảng 15 giây, partition và cluster giúp giảm khoảng 93% dữ liệu phải quét ở tầng Gold (99,3 MiB còn 6,7 MiB).</span><span lang="en">Built a Bronze, Silver and Gold warehouse on BigQuery with dbt Core. A full run takes about 15 seconds, and partitioning plus clustering cut the data scanned at the Gold layer by about 93% (99.3 MiB to 6.7 MiB).</span></li>
+                <li><span lang="vi">Làm sạch dữ liệu tiếng Việt bằng SQL và regex: khử trùng lặp CDC bằng window function, JSON mã hoá hai lần, breadcrumb địa chỉ bị lệch cấp, địa chỉ hành chính cũ và mới, 6 kiểu đơn vị giá. 43.398/43.414 bản ghi (99,96%) đạt chuẩn, 16 bản ghi bất thường được gắn cờ tự động.</span><span lang="en">Cleaned messy Vietnamese listing data with SQL and regex: CDC deduplication with window functions, double-encoded JSON, broken location breadcrumbs, old and new administrative addresses and 6 price units. 43,398 of 43,414 records (99.96%) pass the quality rules and the 16 outliers are flagged automatically.</span></li>
+                <li><span lang="vi">Bảng fact ở tầng Gold phục vụ dashboard Looker Studio, mô hình dự đoán giá nhà trên BigQuery ML và trường ngữ cảnh cho chatbot RAG (Qdrant, Gemini).</span><span lang="en">The Gold fact table feeds Looker Studio dashboards, a BigQuery ML house price model and a context field for a RAG chatbot (Qdrant, Gemini).</span></li>
+              </ul>
+              <ul class="tags"><li>Playwright</li><li>PostgreSQL</li><li>MinIO</li><li>Debezium</li><li>Redpanda</li><li>BigQuery</li><li>dbt Core</li><li>Docker</li><li>Looker Studio</li></ul>
+            </article>
+
+            <article class="project">
+              <header>
                 <p class="project__meta"><span lang="vi">Dự án cá nhân</span><span lang="en">Personal project</span>, 06/2026</p>
                 <h3>Multi-Source Data Platform &amp; RAG Engine</h3>
                 <p class="project__kind">Data Engineering &amp; LLMOps</p>
@@ -231,21 +247,6 @@
               </ul>
               <ul class="tags"><li>Dagster</li><li>dlt</li><li>AWS S3</li><li>DuckDB</li><li>Qdrant</li><li>Llama-Index</li><li>Ollama</li><li>Ragas</li><li>Streamlit</li></ul>
               <a class="project__link" href="https://github.com/HoaiNguyen2003/End2End-DE" target="_blank" rel="noopener"><span lang="vi">Xem mã nguồn trên GitHub</span><span lang="en">View code on GitHub</span></a>
-            </article>
-
-            <article class="project">
-              <header>
-                <p class="project__meta"><span lang="vi">Dự án cá nhân</span><span lang="en">Personal project</span>, 04/2026</p>
-                <h3>YouTube Video &amp; Channel Metrics Pipeline</h3>
-                <p class="project__kind">Data Ingestion &amp; Analytics</p>
-              </header>
-              <ul class="bullets">
-                <li><span lang="vi">Pipeline bất đồng bộ (Python, YouTube Data API v3, yt-dlp) thu thập metadata kênh, hiệu suất video và tương tác.</span><span lang="en">Asynchronous Python pipeline (YouTube Data API v3, yt-dlp) fetching channel metadata, video performance and engagement stats.</span></li>
-                <li><span lang="vi">Lớp phân tích DuckDB truy vấn SQL trên dữ liệu lượt xem dạng chuỗi thời gian.</span><span lang="en">DuckDB analytical layer running SQL over time-series viewing metrics.</span></li>
-                <li><span lang="vi">Dashboard bằng Streamlit và Plotly, kèm REST API (FastAPI) trả về số liệu tổng hợp.</span><span lang="en">Streamlit and Plotly dashboard, plus a FastAPI REST backend that serves the aggregated metrics.</span></li>
-              </ul>
-              <ul class="tags"><li>Python asyncio</li><li>YouTube API</li><li>yt-dlp</li><li>DuckDB</li><li>Streamlit</li><li>Plotly</li><li>FastAPI</li></ul>
-              <a class="project__link" href="https://github.com/HoaiNguyen2003/Youtube-Incremental-Data-Pipeline" target="_blank" rel="noopener"><span lang="vi">Xem mã nguồn trên GitHub</span><span lang="en">View code on GitHub</span></a>
             </article>
 
             <article class="project">

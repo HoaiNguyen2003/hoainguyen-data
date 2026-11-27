@@ -293,7 +293,7 @@ html[data-lang="en"] [lang="vi"] { display: none !important; }
   html { font-size: 11px; }
   body { background: #fff; font-size: 10.5px; line-height: 1.45; color: #000; }
   .topbar, .skip-link, .hero__actions, .hero__cover, #gallery, .lightbox, .project__link,
-  .competencies, .sidebar .card:last-child, .tags, .project__kind, .hero__tagline { display: none !important; }
+  .competencies, .sidebar .card:last-child, .tags, .project__kind, .hero__tagline, .stats { display: none !important; }
   h2, h3, h4 { break-after: avoid; }
   .contact-list li { font-size: 10px; }
   .chips li { padding: 2px 7px; }
@@ -321,7 +321,7 @@ html[data-lang="en"] [lang="vi"] { display: none !important; }
   .content { gap: 6px; }
   .competencies { gap: 6px; margin-top: 8px; }
   .competency { padding: 6px 8px; background: none; }
-  .project { padding: 8px; break-inside: avoid; }
+  .project { padding: 4px 0; border: 0; break-inside: avoid; }
   .timeline__item, .award, .competency { break-inside: avoid; }
   .section__title { font-size: 12pt; margin-bottom: 6px; }
   a { color: inherit; text-decoration: none; }
