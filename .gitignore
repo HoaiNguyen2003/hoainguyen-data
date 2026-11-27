@@ -1,0 +1,16 @@
+# Raw / private source material — never publish (DOB, phone, original scans)
+thong_tin.md
+mo_ta.md
+yeu_cau.md
+image/
+DataEngineer-NguyenThanhHoai.pdf
+*.pdf
+!assets/files/NguyenThanhHoai-DataEngineer-CV.pdf
+
+# Local tooling and planning
+plans/
+scripts/
+.agentkit/
+__pycache__/
+.DS_Store
+Thumbs.db

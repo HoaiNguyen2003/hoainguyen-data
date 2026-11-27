@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* Apply saved/URL language before first paint to avoid a flash of the wrong language. */
+    (function () {
+      var q = new URLSearchParams(location.search).get('lang'), s = null;
+      try { s = localStorage.getItem('lang'); } catch (e) {}
+      var l = (q === 'en' || q === 'vi') ? q : (s === 'en' ? 'en' : 'vi');
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.lang = l;
+    })();
+  </script>
+  <title>Nguyễn Thanh Hoài — Data Engineer | CV</title>
+  <meta name="description" content="Nguyễn Thanh Hoài — Data Engineer (~2 năm kinh nghiệm): Python, SQL, ETL/ELT, Airflow, Dagster, DuckDB. Kỹ sư Khoa học Dữ liệu loại Giỏi, đang học Thạc sĩ KHMT. Open to work.">
+  <meta name="author" content="Nguyễn Thanh Hoài">
+  <meta name="theme-color" content="#0f3d5e">
+  <link rel="canonical" href="https://hoainguyen2003.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Nguyễn Thanh Hoài — Data Engineer">
+  <meta property="og:description" content="Data Engineer · Python · SQL · ETL/ELT · Airflow · Dagster · Open to work">
+  <meta property="og:url" content="https://hoainguyen2003.github.io/">
+  <meta property="og:image" content="https://hoainguyen2003.github.io/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nguyễn Thanh Hoài",
+    "alternateName": "Nguyen Thanh Hoai",
+    "jobTitle": "Data Engineer",
+    "url": "https://hoainguyen2003.github.io/",
+    "image": "https://hoainguyen2003.github.io/assets/img/avatar.jpg",
+    "email": "mailto:thanhhoai2244@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Ho Chi Minh City", "addressCountry": "VN" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Industrial University of Ho Chi Minh City (IUH)" },
+    "knowsAbout": ["Data Engineering", "ETL/ELT", "SQL", "Python", "Apache Airflow", "Dagster", "DuckDB", "PostgreSQL", "MariaDB", "RAG"],
+    "sameAs": ["https://github.com/HoaiNguyen2003", "https://www.linkedin.com/in/thanhhoai3737"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main"><span lang="vi">Bỏ qua tới nội dung</span><span lang="en">Skip to content</span></a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top" aria-label="NH — Nguyễn Thanh Hoài">NH<span class="brand__dot">.</span></a>
+      <nav class="nav" aria-label="Mục lục / Sections">
+        <a href="#about"><span lang="vi">Giới thiệu</span><span lang="en">About</span></a>
+        <a href="#experience"><span lang="vi">Kinh nghiệm</span><span lang="en">Experience</span></a>
+        <a href="#projects"><span lang="vi">Dự án</span><span lang="en">Projects</span></a>
+        <a href="#education"><span lang="vi">Học vấn</span><span lang="en">Education</span></a>
+        <a href="#achievements"><span lang="vi">Thành tích</span><span lang="en">Awards</span></a>
+        <a href="#gallery"><span lang="vi">Hình ảnh</span><span lang="en">Gallery</span></a>
+      </nav>
+      <div class="topbar__actions">
+        <div class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
+          <button type="button" data-set-lang="vi" aria-pressed="true" aria-label="VI — Tiếng Việt">VI</button>
+          <button type="button" data-set-lang="en" aria-pressed="false" aria-label="EN — English">EN</button>
+        </div>
+        <a class="btn btn--primary btn--sm" href="assets/files/NguyenThanhHoai-DataEngineer-CV.pdf" download aria-label="Tải CV (PDF)" data-label-vi="Tải CV (PDF)" data-label-en="Download CV (PDF)">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+          <span lang="vi">Tải CV</span><span lang="en">Get CV</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page" id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="hero__cover" aria-hidden="true"></div>
+      <div class="hero__body">
+        <picture class="hero__avatar">
+          <source srcset="assets/img/avatar.webp" type="image/webp">
+          <img src="assets/img/avatar.jpg" width="600" height="800" fetchpriority="high"
+               alt="Ảnh chân dung Nguyễn Thanh Hoài" data-alt-vi="Ảnh chân dung Nguyễn Thanh Hoài" data-alt-en="Portrait of Nguyen Thanh Hoai">
+        </picture>
+        <div class="hero__info">
+          <p class="badge badge--open"><span class="badge__pulse" aria-hidden="true"></span><span lang="vi">Đang tìm việc</span><span lang="en">Open to work</span></p>
+          <h1 id="hero-name"><span lang="vi">Nguyễn Thanh Hoài</span><span lang="en">Nguyen Thanh Hoai</span></h1>
+          <p class="hero__title">Data Engineer</p>
+          <p class="hero__tagline">
+            <span lang="vi">Xây dựng pipeline dữ liệu tin cậy — từ thu thập, xử lý đến kho dữ liệu và dashboard phục vụ ra quyết định.</span>
+            <span lang="en">Building reliable data pipelines — from ingestion and transformation to warehouses and dashboards that drive decisions.</span>
+          </p>
+          <ul class="hero__meta">
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span lang="vi">Quận 12, TP. Hồ Chí Minh</span><span lang="en">District 12, Ho Chi Minh City</span>
+            </li>
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <a href="mailto:thanhhoai2244@gmail.com">thanhhoai2244@gmail.com</a>
+            </li>
+          </ul>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="assets/files/NguyenThanhHoai-DataEngineer-CV.pdf" download>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16"/></svg>
+              <span lang="vi">Tải CV (PDF)</span><span lang="en">Download CV (PDF)</span>
+            </a>
+            <a class="btn btn--ghost" href="mailto:thanhhoai2244@gmail.com">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <span lang="vi">Liên hệ</span><span lang="en">Contact me</span>
+            </a>
+            <a class="btn btn--ghost" href="https://github.com/HoaiNguyen2003" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+              GitHub
+            </a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/thanhhoai3737" target="_blank" rel="noopener">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+      <dl class="stats">
+        <div class="stat"><dt><span lang="vi">Kinh nghiệm</span><span lang="en">Experience</span></dt><dd>~2 <span lang="vi">năm</span><span lang="en">years</span></dd></div>
+        <div class="stat"><dt><span lang="vi">Giảm thời gian chạy báo cáo</span><span lang="en">Report runtime reduction</span></dt><dd><small><span lang="vi">đến</span><span lang="en">up to</span></small> 35%</dd></div>
+        <div class="stat"><dt><span lang="vi">Chi phí truy vấn phân tích</span><span lang="en">Analytical query overhead</span></dt><dd>−40%</dd></div>
+        <div class="stat"><dt>WorldQuant BRAIN Alphathon</dt><dd>Top 15</dd></div>
+      </dl>
+    </section>
+
+    <div class="layout">
+      <!-- ============ MAIN ============ -->
+      <main id="main" class="content">
+        <section class="section" id="about" aria-labelledby="about-h">
+          <h2 class="section__title" id="about-h"><span lang="vi">Giới thiệu</span><span lang="en">About me</span></h2>
+          <p class="lead">
+            <span lang="vi">Tôi là Nguyễn Thanh Hoài, kỹ sư Khoa học Dữ liệu tốt nghiệp loại <strong>Giỏi</strong> và đang học <strong>Thạc sĩ Khoa học Máy tính</strong>, với khoảng 2 năm kinh nghiệm thực tế phát triển ứng dụng backend Python, xử lý – phân tích dữ liệu và tích hợp giải pháp AI vào hệ thống doanh nghiệp. Thế mạnh của tôi là thiết kế và tối ưu cơ sở dữ liệu, xây dựng pipeline ETL/ELT tự động, và biến yêu cầu nghiệp vụ thành nền tảng lưu trữ, phân tích dữ liệu hiệu năng cao.</span>
+            <span lang="en">I'm Nguyen Thanh Hoai, a Data Science engineer who graduated with a <strong>“Very Good”</strong> classification and is now pursuing a <strong>Master's in Computer Science</strong>. I have about 2 years of hands-on experience building Python backends, processing and analyzing data, and integrating AI solutions into enterprise systems. I specialize in designing and optimizing databases, building automated ETL/ELT pipelines, and turning business requirements into high-performance data storage and analytics platforms.</span>
+          </p>
+          <ul class="competencies">
+            <li class="competency">
+              <h3><span lang="vi">Thiết kế &amp; Tối ưu CSDL</span><span lang="en">Database Design &amp; Optimization</span></h3>
+              <p><span lang="vi">Thiết kế lược đồ quan hệ trên MariaDB, PostgreSQL, SQL Server và kho DuckDB; tối ưu truy vấn SQL phức tạp (giảm đến 35% thời gian chạy báo cáo), giảm tải database giờ cao điểm.</span><span lang="en">Relational schema design on MariaDB, PostgreSQL, SQL Server and DuckDB; tuning complex SQL (up to 35% less report runtime) and relieving peak-hour database load.</span></p>
+            </li>
+            <li class="competency">
+              <h3><span lang="vi">Thu thập dữ liệu (Ingestion)</span><span lang="en">Data Ingestion</span></h3>
+              <p><span lang="vi">Thu thập đa nguồn qua RESTful API, cào dữ liệu tự động (BeautifulSoup, Selenium), nạp dữ liệu có/phi cấu trúc vào AWS S3 bằng dlt.</span><span lang="en">Multi-source ingestion via REST APIs, automated scraping (BeautifulSoup, Selenium), loading structured and unstructured data into AWS S3 with dlt.</span></p>
+            </li>
+            <li class="competency">
+              <h3><span lang="vi">ETL/ELT &amp; Điều phối luồng</span><span lang="en">ETL/ELT &amp; Orchestration</span></h3>
+              <p><span lang="vi">Làm sạch, chuẩn hoá, chuyển đổi dữ liệu với Python, pandas; lập lịch, giám sát và tự động hoá pipeline end-to-end bằng Apache Airflow và Dagster.</span><span lang="en">Cleaning, normalizing and transforming data with Python and pandas; scheduling, monitoring and automating end-to-end pipelines with Apache Airflow and Dagster.</span></p>
+            </li>
+            <li class="competency">
+              <h3><span lang="vi">Xử lý &amp; Phân tích dữ liệu</span><span lang="en">Data Processing &amp; Analysis</span></h3>
+              <p><span lang="vi">Dùng Python, pandas, NumPy để làm sạch dữ liệu bẩn, trích xuất metrics kinh doanh và phân tích dữ liệu chuỗi thời gian.</span><span lang="en">Python, pandas and NumPy to wrangle messy data, extract business metrics and analyze time-series data.</span></p>
+            </li>
+            <li class="competency">
+              <h3><span lang="vi">BI &amp; Dashboard</span><span lang="en">BI &amp; Dashboards</span></h3>
+              <p><span lang="vi">Xây dựng dashboard tương tác bằng Streamlit, Plotly, Power BI để theo dõi chỉ số hoạt động, xu hướng và hiệu suất kinh doanh.</span><span lang="en">Interactive dashboards in Streamlit, Plotly and Power BI to track KPIs, trends and business performance.</span></p>
+            </li>
+            <li class="competency">
+              <h3><span lang="vi">Tích hợp hệ thống &amp; AI</span><span lang="en">Systems Integration &amp; AI</span></h3>
+              <p><span lang="vi">Viết script ETL di chuyển dữ liệu vào ERP doanh nghiệp, đảm bảo toàn vẹn dữ liệu; dùng Vector DB Qdrant lưu embeddings cho pipeline RAG/AI.</span><span lang="en">ETL scripts migrating data into enterprise ERP with full integrity; Qdrant vector DB storing embeddings for RAG/AI pipelines.</span></p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="experience" aria-labelledby="exp-h">
+          <h2 class="section__title" id="exp-h"><span lang="vi">Kinh nghiệm làm việc</span><span lang="en">Work Experience</span></h2>
+          <ol class="timeline">
+            <li class="timeline__item">
+              <article>
+                <header class="entry__head">
+                  <div>
+                    <h3 class="entry__role">Software Developer <span class="muted">(ERP &amp; Database Specialist)</span></h3>
+                    <p class="entry__org">TADALABS · <span lang="vi">TP. Hồ Chí Minh</span><span lang="en">Ho Chi Minh City</span></p>
+                  </div>
+                  <p class="entry__date">08/2024 – 07/2026</p>
+                </header>
+                <p class="entry__stack">Frappe v15 · ERPNext v15 · HRMS · CRM · Python · JavaScript · MariaDB</p>
+                <p><span lang="vi">Tuỳ biến, bảo trì và tối ưu các hệ thống ERP doanh nghiệp quy mô lớn trên nền Frappe/ERPNext.</span><span lang="en">Customized, maintained and optimized large-scale enterprise ERP systems on the Frappe/ERPNext framework.</span></p>
+
+                <h4 class="entry__sub"><span lang="vi">Module ERP dịch vụ sửa đồng hồ — BVDH (“Bệnh viện đồng hồ”)</span><span lang="en">Watch Repair Service ERP Module — BVDH</span></h4>
+                <ul class="bullets">
+                  <li><span lang="vi">Thiết kế và phát triển ứng dụng tuỳ biến <code>inno_bvdh</code> từ đầu; thiết kế lược đồ cho các DocType giao dịch: tình trạng thiết bị (<code>device_condition</code>), nhật ký sửa chữa (<code>repair_log</code>), thông số kỹ thuật.</span><span lang="en">Architected and built the custom app <code>inno_bvdh</code> from scratch, designing schemas for transactional DocTypes: device condition tracking (<code>device_condition</code>), repair logs (<code>repair_log</code>) and specifications.</span></li>
+                  <li><span lang="vi">Lập trình controller Python phía server kiểm soát chặt chẽ chuyển trạng thái; thiết kế trigger thông báo theo sự kiện, tự động gửi cập nhật trạng thái real-time cho khách hàng.</span><span lang="en">Programmed server-side Python controllers enforcing strict state transitions, plus event-driven notification triggers for real-time client status alerts.</span></li>
+                </ul>
+
+                <h4 class="entry__sub"><span lang="vi">Tuỳ biến bán lẻ &amp; TMĐT — VCLShop (“Vợt cầu lông shop”)</span><span lang="en">Retail E-Commerce Customizations — VCLShop</span></h4>
+                <ul class="bullets">
+                  <li><span lang="vi">Thiết kế lược đồ audit log giao dịch (<code>einvoice_audit_log</code>) và cấu hình (<code>einvoice_settings</code>) đảm bảo tuân thủ quy định thuế trên dữ liệu lịch sử.</span><span lang="en">Engineered transactional audit-log (<code>einvoice_audit_log</code>) and settings (<code>einvoice_settings</code>) schemas to guarantee historical tax compliance.</span></li>
+                  <li><span lang="vi">Thiết kế cơ chế snapshot dữ liệu hoá đơn (<code>invoice_item_snapshot</code>), <strong>giảm 40% chi phí truy vấn phân tích</strong> và loại bỏ khoá database giờ cao điểm.</span><span lang="en">Designed invoice data snapshotting (<code>invoice_item_snapshot</code>), <strong>cutting analytical query overhead by 40%</strong> and eliminating database locking during peak retail hours.</span></li>
+                </ul>
+
+                <h4 class="entry__sub"><span lang="vi">Quản trị &amp; Tối ưu cơ sở dữ liệu</span><span lang="en">Database Management &amp; Optimization</span></h4>
+                <ul class="bullets">
+                  <li><span lang="vi">Refactor và tinh chỉnh truy vấn SQL phức tạp, báo cáo script tuỳ biến, <strong>giảm đến 35% thời gian thực thi</strong> trên MariaDB (tồn kho, tài chính, nhân sự).</span><span lang="en">Refactored and tuned complex SQL queries and custom script reports, <strong>reducing execution time by up to 35%</strong> on MariaDB (inventory, finance, HR data).</span></li>
+                  <li><span lang="vi">Viết script ETL tự động di chuyển dữ liệu bán hàng, hồ sơ khách hàng, tồn kho từ hệ thống cũ vào DocType ERPNext, đảm bảo toàn vẹn quan hệ.</span><span lang="en">Built automated ETL scripts migrating legacy sales, customer profile and stock data into ERPNext DocTypes with complete relational integrity.</span></li>
+                </ul>
+              </article>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="proj-h">
+          <h2 class="section__title" id="proj-h"><span lang="vi">Dự án tiêu biểu</span><span lang="en">Featured Projects</span></h2>
+          <div class="projects">
+            <article class="project">
+              <header>
+                <p class="project__meta"><span lang="vi">Dự án cá nhân</span><span lang="en">Personal project</span> · 06/2026</p>
+                <h3>Multi-Source Data Platform &amp; RAG Engine</h3>
+                <p class="project__kind">Data Engineering &amp; LLMOps</p>
+              </header>
+              <ul class="bullets">
+                <li><span lang="vi">Pipeline tự động: Dagster điều phối, dlt nạp dữ liệu phi cấu trúc vào AWS S3.</span><span lang="en">Automated pipeline: Dagster orchestration, dlt ingesting unstructured data into AWS S3.</span></li>
+                <li><span lang="vi">Lớp lưu trữ phân tích với DuckDB + pandas: biến đổi, làm sạch, tổng hợp metrics.</span><span lang="en">Analytical storage layer with DuckDB + pandas for transformation, cleaning and metric aggregation.</span></li>
+                <li><span lang="vi">Qdrant lưu embeddings; hỏi–đáp RAG với Llama-Index + Ollama, đánh giá bằng Ragas (faithfulness, relevance); dashboard Streamlit.</span><span lang="en">Qdrant for embeddings; RAG Q&amp;A with Llama-Index + Ollama, evaluated with Ragas (faithfulness, relevance); Streamlit dashboard.</span></li>
+              </ul>
+              <ul class="tags"><li>Dagster</li><li>dlt</li><li>AWS S3</li><li>DuckDB</li><li>Qdrant</li><li>Llama-Index</li><li>Ollama</li><li>Ragas</li><li>Streamlit</li></ul>
+              <a class="project__link" href="https://github.com/HoaiNguyen2003/End2End-DE" target="_blank" rel="noopener"><span lang="vi">Xem mã nguồn</span><span lang="en">View code</span> →</a>
+            </article>
+
+            <article class="project">
+              <header>
+                <p class="project__meta"><span lang="vi">Dự án cá nhân</span><span lang="en">Personal project</span> · 04/2026</p>
+                <h3>YouTube Video &amp; Channel Metrics Pipeline</h3>
+                <p class="project__kind">Data Ingestion &amp; Analytics</p>
+              </header>
+              <ul class="bullets">
+                <li><span lang="vi">Pipeline bất đồng bộ (Python, YouTube Data API v3, yt-dlp) thu thập metadata kênh, hiệu suất video và tương tác.</span><span lang="en">Asynchronous Python pipeline (YouTube Data API v3, yt-dlp) fetching channel metadata, video performance and engagement stats.</span></li>
+                <li><span lang="vi">Lớp phân tích DuckDB truy vấn SQL trên dữ liệu lượt xem dạng chuỗi thời gian.</span><span lang="en">DuckDB analytical layer running SQL over time-series viewing metrics.</span></li>
+                <li><span lang="vi">Dashboard Streamlit + Plotly; REST API FastAPI phục vụ số liệu tổng hợp.</span><span lang="en">Streamlit + Plotly dashboard; FastAPI REST backend serving aggregated metrics.</span></li>
+              </ul>
+              <ul class="tags"><li>Python asyncio</li><li>YouTube API</li><li>yt-dlp</li><li>DuckDB</li><li>Streamlit</li><li>Plotly</li><li>FastAPI</li></ul>
+              <a class="project__link" href="https://github.com/HoaiNguyen2003/Youtube-Incremental-Data-Pipeline" target="_blank" rel="noopener"><span lang="vi">Xem mã nguồn</span><span lang="en">View code</span> →</a>
+            </article>
+
+            <article class="project">
+              <header>
+                <p class="project__meta"><span lang="vi">Dự án cá nhân</span><span lang="en">Personal project</span> · 06/2025</p>
+                <h3>Premier League Football Predictions Pipeline</h3>
+                <p class="project__kind">Data Pipeline &amp; Machine Learning</p>
+              </header>
+              <ul class="bullets">
+                <li><span lang="vi">Cào dữ liệu thống kê bóng đá tự động (BeautifulSoup, Selenium) từ SoccerStats247.</span><span lang="en">Automated scraping of football statistics (BeautifulSoup, Selenium) from SoccerStats247.</span></li>
+                <li><span lang="vi">Apache Airflow lập lịch làm mới bảng xếp hạng và kết quả mỗi 3 ngày; kho dữ liệu SQL Server qua pyodbc.</span><span lang="en">Apache Airflow refreshing standings and results every three days; SQL Server warehouse loaded via pyodbc.</span></li>
+                <li><span lang="vi">Mô hình Gradient Boosting dự đoán kết quả trận đấu, triển khai dịch vụ bằng Flask.</span><span lang="en">Gradient Boosting model predicting match outcomes, served with Flask.</span></li>
+              </ul>
+              <ul class="tags"><li>BeautifulSoup</li><li>Selenium</li><li>Apache Airflow</li><li>SQL Server</li><li>Gradient Boosting</li><li>Flask</li></ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="education" aria-labelledby="edu-h">
+          <h2 class="section__title" id="edu-h"><span lang="vi">Học vấn</span><span lang="en">Education</span></h2>
+          <ol class="timeline">
+            <li class="timeline__item">
+              <header class="entry__head">
+                <div>
+                  <h3 class="entry__role"><span lang="vi">Thạc sĩ Khoa học Máy tính</span><span lang="en">Master of Science in Computer Science</span></h3>
+                  <p class="entry__org"><span lang="vi">Trường Đại học Công nghiệp TP.HCM (IUH)</span><span lang="en">Industrial University of Ho Chi Minh City (IUH)</span></p>
+                </div>
+                <p class="entry__date">2026 – <span lang="vi">nay</span><span lang="en">Present</span></p>
+              </header>
+              <p><span class="pill"><span lang="vi">Đang học</span><span lang="en">In progress</span></span> <span lang="vi">Nhận học bổng 100% học phí học kỳ đầu.</span><span lang="en">Awarded a 100% tuition scholarship for the first semester.</span></p>
+            </li>
+            <li class="timeline__item">
+              <header class="entry__head">
+                <div>
+                  <h3 class="entry__role"><span lang="vi">Kỹ sư Khoa học Dữ liệu</span><span lang="en">Engineer's Degree in Data Science</span></h3>
+                  <p class="entry__org"><span lang="vi">Trường Đại học Công nghiệp TP.HCM (IUH)</span><span lang="en">Industrial University of Ho Chi Minh City (IUH)</span></p>
+                </div>
+                <p class="entry__date">2021 – 2026</p>
+              </header>
+              <p><span class="pill pill--accent"><span lang="vi">Tốt nghiệp loại Giỏi</span><span lang="en">“Very Good” classification</span></span> <span lang="vi">Khoá luận tốt nghiệp đạt A+.</span><span lang="en">Graduation thesis graded A+.</span></p>
+              <p class="muted"><span lang="vi">Môn học liên quan: Cơ sở dữ liệu quan hệ, SQL nâng cao, Cấu trúc dữ liệu &amp; Giải thuật, Machine Learning, Kho dữ liệu, Trực quan hoá dữ liệu.</span><span lang="en">Relevant coursework: Relational Databases, Advanced SQL, Data Structures &amp; Algorithms, Machine Learning, Data Warehousing, Data Visualization.</span></p>
+              <p class="muted"><span lang="vi">Chứng chỉ:</span><span lang="en">Certification:</span> Introduction to Data Engineering (Coursera)</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="achievements" aria-labelledby="ach-h">
+          <h2 class="section__title" id="ach-h"><span lang="vi">Thành tích &amp; Giải thưởng</span><span lang="en">Honors &amp; Awards</span></h2>
+          <ul class="awards">
+            <li class="award">
+              <span class="award__year">2026</span>
+              <div>
+                <h3><span lang="vi">Tân kỹ sư tốt nghiệp loại Giỏi</span><span lang="en">Graduated with a “Very Good” classification</span></h3>
+                <p><span lang="vi">Giấy khen của Hiệu trưởng Trường ĐH Công nghiệp TP.HCM; được vinh danh trong lễ tốt nghiệp.</span><span lang="en">Certificate of Merit from the President of IUH; honored at the graduation ceremony.</span></p>
+              </div>
+            </li>
+            <li class="award">
+              <span class="award__year">2026</span>
+              <div>
+                <h3><span lang="vi">Học bổng 100% học phí Thạc sĩ</span><span lang="en">100% Master's tuition scholarship</span></h3>
+                <p><span lang="vi">Học bổng tiếp tục học tập trình độ Thạc sĩ — học kỳ đầu (IUH).</span><span lang="en">Scholarship for continuing to the Master's level — first semester (IUH).</span></p>
+              </div>
+            </li>
+            <li class="award">
+              <span class="award__year">2023–2025</span>
+              <div>
+                <h3><span lang="vi">Học bổng khuyến khích học tập</span><span lang="en">Academic merit scholarships</span></h3>
+                <p><span lang="vi">100% học phí (HK1 2023–2024), 50% (HK2 2023–2024), 70% (HK1 2024–2025).</span><span lang="en">100% tuition (Sem. 1 2023–2024), 50% (Sem. 2 2023–2024), 70% (Sem. 1 2024–2025).</span></p>
+              </div>
+            </li>
+            <li class="award">
+              <span class="award__year">2023</span>
+              <div>
+                <h3><span lang="vi">Top 15 chung kết — WorldQuant BRAIN Alphathon IUH</span><span lang="en">Top 15 Finalist — WorldQuant BRAIN Alphathon IUH</span></h3>
+              </div>
+            </li>
+            <li class="award">
+              <span class="award__year">2023</span>
+              <div>
+                <h3><span lang="vi">Top 24 chung kết — Vietnam Datathon</span><span lang="en">Top 24 Finalist — Vietnam Datathon</span></h3>
+              </div>
+            </li>
+            <li class="award">
+              <span class="award__year">2023</span>
+              <div>
+                <h3><span lang="vi">Vô địch — Giải bóng đá Data Science League</span><span lang="en">Champion — Data Science League Football Tournament</span></h3>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="gallery" aria-labelledby="gal-h">
+          <h2 class="section__title" id="gal-h"><span lang="vi">Hình ảnh minh chứng</span><span lang="en">Certificates &amp; Photos</span></h2>
+          <ul class="gallery">
+            <li>
+              <figure class="gallery__item">
+                <a class="gallery__btn" href="assets/img/achievement-graduation-honor.webp">
+                  <img src="assets/img/thumbs/achievement-graduation-honor.webp" width="480" height="270" loading="lazy" decoding="async"
+                       alt="Slide vinh danh tân kỹ sư tốt nghiệp loại Giỏi 2026" data-alt-vi="Slide vinh danh tân kỹ sư tốt nghiệp loại Giỏi 2026" data-alt-en="Honor slide for Very Good engineering graduates 2026">
+                </a>
+                <figcaption><span lang="vi">Vinh danh tân kỹ sư tốt nghiệp loại Giỏi 2026</span><span lang="en">Honored as a “Very Good” graduate, 2026</span></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <a class="gallery__btn" href="assets/img/achievement-diploma.webp">
+                  <img src="assets/img/thumbs/achievement-diploma.webp" width="480" height="339" loading="lazy" decoding="async"
+                       alt="Bằng kỹ sư Khoa học Dữ liệu, đã che thông tin cá nhân" data-alt-vi="Bằng kỹ sư Khoa học Dữ liệu, đã che thông tin cá nhân" data-alt-en="Engineer's degree in Data Science, personal details redacted">
+                </a>
+                <figcaption><span lang="vi">Bằng Kỹ sư Khoa học Dữ liệu (đã che thông tin cá nhân — bản gốc/bản sao công chứng cung cấp khi được yêu cầu)</span><span lang="en">Engineer's degree in Data Science (personal details redacted — original or certified copy available on request)</span></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <a class="gallery__btn" href="assets/img/achievement-certificate-merit.webp">
+                  <img src="assets/img/thumbs/achievement-certificate-merit.webp" width="480" height="339" loading="lazy" decoding="async"
+                       alt="Giấy khen tốt nghiệp loại Giỏi" data-alt-vi="Giấy khen tốt nghiệp loại Giỏi" data-alt-en="Certificate of Merit for Very Good graduation">
+                </a>
+                <figcaption><span lang="vi">Giấy khen tốt nghiệp loại Giỏi (10/2026)</span><span lang="en">Certificate of Merit — Very Good graduation (10/2026)</span></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="gallery__item">
+                <a class="gallery__btn" href="assets/img/achievement-master-scholarship.webp">
+                  <img src="assets/img/thumbs/achievement-master-scholarship.webp" width="480" height="346" loading="lazy" decoding="async"
+                       alt="Học bổng 100% học phí Thạc sĩ" data-alt-vi="Học bổng 100% học phí Thạc sĩ" data-alt-en="100% Master's tuition scholarship">
+                </a>
+                <figcaption><span lang="vi">Học bổng 100% học phí Thạc sĩ (học kỳ đầu)</span><span lang="en">100% Master's tuition scholarship (first semester)</span></figcaption>
+              </figure>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="activities" aria-labelledby="act-h">
+          <h2 class="section__title" id="act-h"><span lang="vi">Hoạt động</span><span lang="en">Activities</span></h2>
+          <article>
+            <header class="entry__head">
+              <div>
+                <h3 class="entry__role"><span lang="vi">Thành viên tích cực / Mentor</span><span lang="en">Active Member / Mentor</span></h3>
+                <p class="entry__org"><span lang="vi">CLB Programming Lab &amp; AI (IUH)</span><span lang="en">Programming Lab &amp; AI Club (IUH)</span></p>
+              </div>
+              <p class="entry__date">04/2022 – <span lang="vi">nay</span><span lang="en">Present</span></p>
+            </header>
+            <ul class="bullets">
+              <li><span lang="vi">Tổ chức workshop, hướng dẫn thành viên mới về lập trình Python, thiết kế cơ sở dữ liệu SQL và giải thuật.</span><span lang="en">Ran workshops and mentored junior members in Python, SQL database design and algorithmic problem-solving.</span></li>
+              <li><span lang="vi">Tham gia lập trình thi đấu; đóng góp cho nền tảng chấm bài trực tuyến mã nguồn mở của CLB</span><span lang="en">Competed in programming contests; contributed to the club's open-source online judge</span> (<a href="https://oj.iuhcoder.com" target="_blank" rel="noopener">oj.iuhcoder.com</a>).</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="sidebar" aria-label="Thông tin nhanh / Quick facts">
+        <section class="card" aria-labelledby="contact-h">
+          <h2 class="card__title" id="contact-h"><span lang="vi">Liên hệ</span><span lang="en">Contact</span></h2>
+          <ul class="contact-list">
+            <li><span class="contact-list__label"><span lang="vi">Trạng thái</span><span lang="en">Status</span></span><span class="status-open"><span lang="vi">Đang tìm việc — sẵn sàng nhận vị trí Data Engineer</span><span lang="en">Open to work — available for Data Engineer roles</span></span></li>
+            <li><span class="contact-list__label">Email</span><a href="mailto:thanhhoai2244@gmail.com">thanhhoai2244@gmail.com</a></li>
+            <li><span class="contact-list__label">GitHub</span><a href="https://github.com/HoaiNguyen2003" target="_blank" rel="noopener">github.com/HoaiNguyen2003</a></li>
+            <li><span class="contact-list__label">LinkedIn</span><a href="https://www.linkedin.com/in/thanhhoai3737" target="_blank" rel="noopener">linkedin.com/in/thanhhoai3737</a></li>
+            <li><span class="contact-list__label"><span lang="vi">Khu vực</span><span lang="en">Location</span></span><span lang="vi">Quận 12, TP. Hồ Chí Minh</span><span lang="en">District 12, Ho Chi Minh City</span></li>
+          </ul>
+          <p class="note"><span lang="vi">Số điện thoại có trong file CV (PDF).</span><span lang="en">Phone number is included in the CV (PDF).</span></p>
+        </section>
+
+        <section class="card" id="skills" aria-labelledby="skills-h">
+          <h2 class="card__title" id="skills-h"><span lang="vi">Kỹ năng</span><span lang="en">Skills</span></h2>
+          <div class="skill-group">
+            <h3><span lang="vi">Ngôn ngữ lập trình</span><span lang="en">Programming</span></h3>
+            <ul class="chips"><li>Python</li><li>SQL (T-SQL, PL/pgSQL)</li><li>JavaScript</li><li>HTML/CSS</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3><span lang="vi">Cơ sở dữ liệu &amp; Lưu trữ</span><span lang="en">Databases &amp; Storage</span></h3>
+            <ul class="chips"><li>MariaDB</li><li>MySQL</li><li>PostgreSQL</li><li>DuckDB</li><li>MS SQL Server</li><li>Qdrant</li><li>AWS S3</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3><span lang="vi">Điều phối dữ liệu</span><span lang="en">Data Orchestration</span></h3>
+            <ul class="chips"><li>Dagster</li><li>Apache Airflow</li><li>dlt</li><li>pyodbc</li><li>ETL/ELT</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Web &amp; API</h3>
+            <ul class="chips"><li>Frappe/ERPNext</li><li>FastAPI</li><li>Flask</li><li>Streamlit</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Data Science &amp; BI</h3>
+            <ul class="chips"><li>pandas</li><li>NumPy</li><li>scikit-learn</li><li>Llama-Index</li><li>Ragas</li><li>Power BI</li><li>Plotly</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3><span lang="vi">Công cụ &amp; DevOps</span><span lang="en">Tools &amp; DevOps</span></h3>
+            <ul class="chips"><li>Git</li><li>Docker</li><li>Docker Compose</li><li>Linux/Shell</li><li>n8n/Make</li></ul>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="interests-h">
+          <h2 class="card__title" id="interests-h"><span lang="vi">Sở thích</span><span lang="en">Interests</span></h2>
+          <ul class="plain-list">
+            <li><span lang="vi">Cập nhật công nghệ dữ liệu mới: Lakehouse, dbt, Apache Spark</span><span lang="en">Keeping up with modern data tech: Lakehouse, dbt, Apache Spark</span></li>
+            <li><span lang="vi">Bóng đá, âm nhạc, game, đọc manga (Doraemon, Shin-chan)</span><span lang="en">Football, music, gaming, manga (Doraemon, Shin-chan)</span></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="footer">
+      <p><strong><span lang="vi">Nguyễn Thanh Hoài</span><span lang="en">Nguyen Thanh Hoai</span></strong> · Data Engineer · <a href="mailto:thanhhoai2244@gmail.com">thanhhoai2244@gmail.com</a></p>
+      <p class="muted">© <span data-year>2026</span> · <span lang="vi">Cập nhật 11/2026</span><span lang="en">Updated 11/2026</span></p>
+    </footer>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Xem ảnh / Image viewer">
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button type="button" class="lightbox__btn lightbox__close" data-lb="close" aria-label="Đóng / Close">✕</button>
+    <button type="button" class="lightbox__btn lightbox__prev" data-lb="prev" aria-label="Ảnh trước / Previous">‹</button>
+    <button type="button" class="lightbox__btn lightbox__next" data-lb="next" aria-label="Ảnh sau / Next">›</button>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
